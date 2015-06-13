@@ -4,20 +4,20 @@
         public $uses = array("Contato", "Cliente");
 
 
-public function login(){
-    if($this->request->is("POST")){
-        $contato = $this->Contato->findByEmail($this->request->data["Contato"]["email"]);
+        public function login(){
+            if($this->request->is("POST")){
+                $contato = $this->Contato->findByEmail($this->request->data["Contato"]["email"]);
 
-        if(!empty($contato)){
-            if($contato["Contato"]["senha"]==sha1($this->request->data["Contato"]["senha"])){
-                // logou
-                $this->Session->write("contato", $contato);
-                $this->redirect("/contato/contatos");
+                if(!empty($contato)){
+                    if($contato["Contato"]["senha"]==sha1($this->request->data["Contato"]["senha"])){
+                        // logou
+                        $this->Session->write("contato", $contato);
+                        $this->redirect("/contato/ordens");
+                    }
+                }
+                $this->Contato->invalidate("email", "Usuário e/ou senha inválidos.");
             }
         }
-        $this->Contato->invalidate("email", "Usuário e/ou senha inválidos.");
-    }
-}
 
         public function admin_index(){
             $this->set("contatos", $this->paginate("Contato"));
