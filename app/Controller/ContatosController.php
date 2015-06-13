@@ -12,7 +12,7 @@ public function login(){
             if($contato["Contato"]["senha"]==sha1($this->request->data["Contato"]["senha"])){
                 // logou
                 $this->Session->write("contato", $contato);
-                $this->redirect("/admin/contatos");
+                $this->redirect("/contato/contatos");
             }
         }
         $this->Contato->invalidate("email", "Usuário e/ou senha inválidos.");

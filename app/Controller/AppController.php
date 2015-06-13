@@ -32,9 +32,19 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
     public function beforeFilter(){
-        if($this->params["prefix"]=="admin"){
-            $this->layout = "default_admin";
+        if($this->params["prefix"]=="contato"){
+            $this->layout = "default_contato";
             if(!$this->Session->check("contato")){
+                $this->redirect("/contato");
+            }
+        }else if($this->params["prefix"]=="funcionario"){
+            $this->layout = "default_funcionario";
+            if(!$this->Session->check("functionario")){
+                $this->redirect("/functionario");
+            }
+        }else if($this->params["prefix"]=="admin"){
+            $this->layout = "default_admin";
+            if(!$this->Session->check("admin")){
                 $this->redirect("/entrar");
             }
         }

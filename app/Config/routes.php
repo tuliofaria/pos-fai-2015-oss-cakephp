@@ -30,7 +30,11 @@
  */
     Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 
-	Router::connect('/entrar', array('controller' => 'contatos', 'action' => 'login'));
+    Router::connect('/contato', array('controller' => 'contatos', 'action' => 'login'));
+    Router::connect('/funcionario', array('controller' => 'funcionarios', 'action' => 'login'));
+    
+    // TODO: pensar no admin
+	Router::connect('/admin', array('controller' => 'admin', 'action' => 'login'));
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on
