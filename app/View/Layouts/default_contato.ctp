@@ -20,6 +20,10 @@
 	<div id="container">
 		<div id="header">
 			<h1>CONTATO: <?php echo $this->Html->link('OSS', '/'); ?></h1>
+			<p>
+				Ordens pendentes: 
+				<? echo $this->requestAction("/ordens/getAbertas"); ?>
+			</p>
 		</div>
 		<div id="content">
 
