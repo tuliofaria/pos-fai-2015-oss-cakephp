@@ -10,8 +10,8 @@
     <tr>
         <th><? echo $c["Contato"]["nome"] ?></th>
         <th>
-            <a href="<? echo $this->Html->url("/contatos/edit/".$c["Funcionario"]["id"]) ?>">Editar</a>
-            <a href="<? echo $this->Html->url("/contatos/delete/".$c["Funcionario"]["id"]) ?>">Excluir</a>
+            <a href="<? echo $this->Html->url("/contatos/edit/".$c["Contato"]["id"]) ?>">Editar</a>
+            <a href="<? echo $this->Html->url("/contatos/delete/".$c["Contato"]["id"]) ?>">Excluir</a>
         </th>
     </tr>
     <? } ?>
