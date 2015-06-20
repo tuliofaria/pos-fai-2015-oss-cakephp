@@ -24,10 +24,15 @@
 
                 if($this->Ordem->save($this->request->data)){
 
-move_uploaded_file($this->request->data["Ordem"]["arquivo"]["tmp_name"], WWW_ROOT.DS."files".DS.$this->Ordem->id.".jpg");                    
+move_uploaded_file($this->request->data["Ordem"]["arquivo"]["tmp_name"], WWW_ROOT.DS."files".DS.$this->Ordem->id.".jpg");
                     //$this->redirect("/contato/ordens");
                 }
             }
+        }
+        public function csv(){
+            $this->layout = "csv";
+            $ordens = $this->Ordem->find("all");
+            $this->set("ordens", $ordens);
         }
 
     }
