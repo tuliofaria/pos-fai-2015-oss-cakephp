@@ -1,5 +1,27 @@
 <?
     class FuncionariosController extends AppController{
+	
+	 public $uses = array("Funcionario");
+
+
+        public function login(){
+		
+		$log = $this->Model->getDataSource()->getLog(false, false);
+debug($log);
+            if($this->request->is("POST")){
+                $funcionario = $this->Funcionario->findByEmail($this->request->data["Funcionario"]["email"]);
+
+                if(isset($funcionario)){
+                    if($funcionario["Funcionario"]["senha"]==sha1($this->request->data["Funcionario"]["senha"])){
+                        // logou
+                        $this->Session->write("funcionario", $funcionario);
+                        $this->redirect("/funcionario");
+						
+                    }
+                }
+                //$this->Funcionario->invalidate("email", "Usuário e/ou senha inválidos.");
+            }
+        }
 
         public function index(){
             $this->set("funcionarios", $this->paginate("Funcionario"));

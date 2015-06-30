@@ -4,11 +4,13 @@
 <table>
     <tr>
         <th>Nome</th>
+		<th>Email</th>
         <th>Ações</th>
     </tr>
     <? foreach($funcionarios as $f){ ?>
     <tr>
         <th><? echo $f["Funcionario"]["nome"] ?></th>
+		<th><? echo $f["Funcionario"]["email"] ?></th>
         <th>
             <a href="<? echo $this->Html->url("/funcionarios/edit/".$f["Funcionario"]["id"]) ?>">Editar</a>
             <a href="<? echo $this->Html->url("/funcionarios/delete/".$f["Funcionario"]["id"]) ?>">Excluir</a>
