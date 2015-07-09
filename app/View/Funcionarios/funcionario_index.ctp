@@ -10,7 +10,7 @@
     <tr>
         <th><? echo $f["Funcionario"]["nome"] ?></th>
         <th>
-            <a href="<? echo $this->Html->url("/funcionarios/edit/".$f["Funcionario"]["id"]) ?>">Editar</a>
+            <a href="<? echo $this->Html->url("/funcionarios/edit/".$f["Funcionario"]["id"]) ?>">Editar</a>            
             <a href="<? echo $this->Html->url("/funcionarios/delete/".$f["Funcionario"]["id"]) ?>">Excluir</a>
         </th>
     </tr>
