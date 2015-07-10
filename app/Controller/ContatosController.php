@@ -22,6 +22,7 @@
         public function admin_index(){
             $this->set("contatos", $this->paginate("Contato"));
         }
+        
         public function create() {
             $this->set("clientes", $this->Cliente->find("list"));
             if($this->request->is("POST")){
@@ -42,6 +43,7 @@
                 $this->request->data = $this->Contato->findById($id);
             }
         }
+        
         public function delete($id){
             $this->Contato->delete($id);
             $this->Session->setFlash("Contato excluído com sucesso!");
