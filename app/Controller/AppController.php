@@ -31,22 +31,40 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
-    public function beforeFilter(){
-        if($this->params["prefix"]=="contato"){
-            $this->layout = "default_contato";
-            if(!$this->Session->check("contato")){
-                $this->redirect("/contato");
-            }
-        }else if($this->params["prefix"]=="funcionario"){
-            $this->layout = "default_funcionario";
-            if(!$this->Session->check("functionario")){
-                $this->redirect("/functionario");
-            }
-        }else if($this->params["prefix"]=="admin"){
-            $this->layout = "default_admin";
-            if(!$this->Session->check("admin")){
-                $this->redirect("/entrar");
-            }
-        }
-    }
+	public function beforeFilter(){
+
+		// dependendo do prefix, o acesso fica especifico
+
+		if($this->params["prefix"]=="contato"){
+			$this->layout = "default_contato";
+			if(!$this->Session->check("contato")){
+				$this->redirect("/contato");
+			}
+		}
+
+		if($this->params["prefix"]=="funcionario"){
+			$this->layout = "default_funcionario";
+			if(!$this->Session->check("funcionario")){
+				$this->redirect("/funcionario");
+			}
+		}
+
+		//----------------------------------------------------
+		// virginia : criando url para equipamentos
+		//----------------------------------------------------
+		
+		if($this->params["prefix"]=="equipamento"){
+			$this->layout = "default_equipamento";
+			if(!$this->Session->check("equipamento")){
+				$this->redirect("/equipamento");
+			}
+		}
+
+		if($this->params["prefix"]=="admin"){
+			$this->layout = "default_admin";
+			if(!$this->Session->check("admin")){
+				$this->redirect("/entrar");
+			}
+		}
+	}
 }
