@@ -39,13 +39,18 @@ class AppController extends Controller {
             }
         }else if($this->params["prefix"]=="funcionario"){
             $this->layout = "default_funcionario";
-            if(!$this->Session->check("functionario")){
-                $this->redirect("/functionario");
+            if(!$this->Session->check("funcionario")){
+                $this->redirect("/funcionario");
             }
         }else if($this->params["prefix"]=="admin"){
             $this->layout = "default_admin";
             if(!$this->Session->check("admin")){
                 $this->redirect("/entrar");
+            }
+        }else if($this->params["prefix"]=="cliente"){
+            $this->layout = "default_cliente";
+            if(!$this->Session->check("cliente")){
+                $this->redirect("/cliente");
             }
         }
     }

@@ -31,8 +31,8 @@
     Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 
     Router::connect('/contato', array('controller' => 'contatos', 'action' => 'login'));
-    Router::connect('/funcionario', array('controller' => 'funcionarios', 'action' => 'create'));
-	Router::connect('/cliente', array('controller' => 'clientes', 'action' => 'create'));
+    Router::connect('/funcionario', array('controller' => 'funcionarios', 'action' => 'login'));
+	Router::connect('/cliente', array('controller' => 'clientes', 'action' => 'login'));
     
     // TODO: pensar no admin
 	Router::connect('/admin', array('controller' => 'admin', 'action' => 'login'));
