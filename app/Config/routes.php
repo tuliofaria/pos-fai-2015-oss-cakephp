@@ -32,6 +32,7 @@
 
     Router::connect('/contato', array('controller' => 'contatos', 'action' => 'login'));
     Router::connect('/funcionario', array('controller' => 'funcionarios', 'action' => 'login'));
+	Router::connect('/cliente', array('controller' => 'clientes', 'action' => 'login'));
     
     // TODO: pensar no admin
 	Router::connect('/admin', array('controller' => 'admin', 'action' => 'login'));
