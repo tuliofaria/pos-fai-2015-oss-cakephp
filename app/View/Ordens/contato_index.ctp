@@ -10,7 +10,7 @@
     <tr>
         <th><? echo $c["Ordem"]["id"] ?></th>
         <th>
-            <a href="<? echo $this->Html->url("/contatos/edit/".$c["Ordem"]["id"]) ?>">Editar</a>
+            <a href="<? echo $this->Html->url("/contato/ordens/edit/".$c["Ordem"]["id"]) ?>">Editar</a>
             <a href="<? echo $this->Html->url("/contatos/delete/".$c["Ordem"]["id"]) ?>">Excluir</a>
         </th>
     </tr>

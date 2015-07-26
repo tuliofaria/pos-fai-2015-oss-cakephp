@@ -1,4 +1,4 @@
-<h2>Nova ordem</h2>
+<h2>Alterar ordem</h2>
 <? echo $this->Form->create("Ordem", array("enctype"=>"multipart/form-data")) ?>
     <? echo $this->Form->input("data_abertura",
         array(
