@@ -47,6 +47,11 @@ class AppController extends Controller {
             if(!$this->Session->check("admin")){
                 $this->redirect("/entrar");
             }
+        }else if($this->params["prefix"]=="cliente"){
+            $this->layout = "default_cliente";
+            if(!$this->Session->check("cliente")){
+                $this->redirect("/cliente");
+            }
         }
     }
 }

@@ -19,10 +19,7 @@
 <body>
 	<div id="container">
 		<div id="header">
-			<h1><?php echo $this->Html->link('OSS', '/'); ?></h1>			
-			<h1><?php echo $this->Html->link('Produtos', '/funcionario/produtos'); ?></h1>	
-			<h1>Funcionários: <?php echo $this->Html->link('OSS', '/'); ?></h1>
-
+			<h1>Clientes: <?php echo $this->Html->link('OSS', '/'); ?></h1>
 		</div>
 		<div id="content">
 
